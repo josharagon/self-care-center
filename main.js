@@ -31,16 +31,31 @@ var mantras = [
   "Onward and upward.",
   "I am the sky, the rest is weather.",
 ];
-
+// querySelector
+var quote = document.querySelector('.quote')
+var meditate = document.querySelector('.image')
 //eventlisteners
+
+function getRandomIndex(array) {
+    return Math.floor(Math.random() * array.length);
+}
 
 
 
 var button = document.querySelector('button');
 
-button.addEventListener('click', consolelag);
+button.addEventListener('click', showQuote);
 
-function consolelag(){
+function showQuote(){
   event.preventDefault();
-  console.log("bruh moment")
+quote.classList.remove('hidden');
+meditate.classList.add('hidden');
+  if (document.getElementById('affirmation').checked == true) {
+        quote.innerText = affirmations[getRandomIndex(affirmations)];
+      } else if (document.getElementById('mantra').checked == true) {
+        quote.innerText = affirmations[getRandomIndex(affirmations)];
+      } else {
+        meditate.classList.remove('hidden');
+        quote.classList.add('hidden');
+      }
 }
