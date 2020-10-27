@@ -49,17 +49,20 @@ function getRandomIndex(array) {
 
 function showQuote(){
   event.preventDefault();
-quote.classList.remove('hidden');
-meditate.classList.add('hidden');
   if (document.getElementById('affirmation').checked == true) {
         quote.innerText = affirmations[getRandomIndex(affirmations)]
-          cancel.classList.remove('hidden');
+        quote.classList.remove('hidden');
+        meditate.classList.add('hidden');
+        cancel.classList.remove('hidden');
+        button.style.color="green";
       } else if (document.getElementById('mantra').checked == true) {
         quote.innerText = affirmations[getRandomIndex(affirmations)]
+        quote.classList.remove('hidden');
+        meditate.classList.add('hidden');
         cancel.classList.remove('hidden');
+        button.style.color="green";
       } else {
-        meditate.classList.remove('hidden');
-        quote.classList.add('hidden');
+        button.style.color="red";
       }
 };
 
@@ -70,4 +73,5 @@ function removeQuote(){
   cancel.classList.add('hidden');
   document.getElementById('affirmation').checked = false;
   document.getElementById('mantra').checked = false;
+  button.style.color="white";
 };
