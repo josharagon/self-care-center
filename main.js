@@ -36,10 +36,16 @@ var quote = document.querySelector('.quote')
 var meditate = document.querySelector('.image')
 var button = document.querySelector('button');
 var cancel = document.querySelector('button2')
+var radioInput1= document.querySelector('#affirmation')
+var radioInput2 = document.querySelector('#mantra')
 
 //eventlisteners
 button.addEventListener('click', showQuote);
  cancel.addEventListener('click', removeQuote)
+radioInput1.addEventListener('click', whiteText)
+radioInput2.addEventListener('click', whiteText)
+
+//functions
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
@@ -75,3 +81,8 @@ function removeQuote(){
   document.getElementById('mantra').checked = false;
   button.style.color="white";
 };
+
+
+function whiteText(){
+  button.style.color="white"
+}
