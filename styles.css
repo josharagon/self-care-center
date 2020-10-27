@@ -110,4 +110,5 @@ button2{
   cursor: pointer;
   background-color:#dedede;
   color: white;
+  user-select: none;
 }
