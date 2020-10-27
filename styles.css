@@ -105,3 +105,9 @@ img{
 .hidden{
   display: none;
 }
+
+button2{
+  cursor: pointer;
+  background-color:#dedede;
+  color: white;
+}

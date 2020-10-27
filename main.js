@@ -34,7 +34,12 @@ var mantras = [
 // querySelector
 var quote = document.querySelector('.quote')
 var meditate = document.querySelector('.image')
+var button = document.querySelector('button');
+var cancel = document.querySelector('button2')
+
 //eventlisteners
+button.addEventListener('click', showQuote);
+ cancel.addEventListener('click', removeQuote)
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
@@ -42,20 +47,27 @@ function getRandomIndex(array) {
 
 
 
-var button = document.querySelector('button');
-
-button.addEventListener('click', showQuote);
-
 function showQuote(){
   event.preventDefault();
 quote.classList.remove('hidden');
 meditate.classList.add('hidden');
   if (document.getElementById('affirmation').checked == true) {
-        quote.innerText = affirmations[getRandomIndex(affirmations)];
+        quote.innerText = affirmations[getRandomIndex(affirmations)]
+          cancel.classList.remove('hidden');
       } else if (document.getElementById('mantra').checked == true) {
-        quote.innerText = affirmations[getRandomIndex(affirmations)];
+        quote.innerText = affirmations[getRandomIndex(affirmations)]
+        cancel.classList.remove('hidden');
       } else {
         meditate.classList.remove('hidden');
         quote.classList.add('hidden');
       }
-}
+};
+
+
+function removeQuote(){
+  quote.classList.add('hidden');
+  meditate.classList.remove('hidden');
+  cancel.classList.add('hidden');
+  document.getElementById('affirmation').checked = false;
+  document.getElementById('mantra').checked = false;
+};
