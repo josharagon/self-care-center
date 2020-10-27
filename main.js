@@ -60,13 +60,11 @@ function showQuote(){
         quote.classList.remove('hidden');
         meditate.classList.add('hidden');
         cancel.classList.remove('hidden');
-        button.style.color="green";
       } else if (document.getElementById('mantra').checked == true) {
         quote.innerText = affirmations[getRandomIndex(affirmations)]
         quote.classList.remove('hidden');
         meditate.classList.add('hidden');
         cancel.classList.remove('hidden');
-        button.style.color="green";
       } else {
         button.style.color="red";
       }
